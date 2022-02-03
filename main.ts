@@ -9,6 +9,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     PrincessSun.startEffect(effects.fire, 5000)
     PrincessViolet.startEffect(effects.fire, 5000)
 })
+let mySprite: Sprite = null
 let pronouns = ""
 let verbs = ""
 let nouns = ""
@@ -98,3 +99,23 @@ sentence = "The castle is cold in the winter, which is why we build fires!"
 nouns = "" + sentence.substr(4, 6) + sentence.substr(25, 7) + sentence.substr(55, 5)
 verbs = "" + sentence.substr(11, 3) + sentence.substr(50, 5)
 pronouns = sentence.substr(47, 2)
+forever(function () {
+    mySprite = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . b 5 5 b . . . 
+        . . . . . . b b b b b b . . . . 
+        . . . . . b b 5 5 5 5 5 b . . . 
+        . b b b b b 5 5 5 5 5 5 5 b . . 
+        . b d 5 b 5 5 5 5 5 5 5 5 b . . 
+        . . b 5 5 b 5 d 1 f 5 d 4 f . . 
+        . . b d 5 5 b 1 f f 5 4 4 c . . 
+        b b d b 5 5 5 d f b 4 4 4 4 b . 
+        b d d c d 5 5 b 5 4 4 4 4 4 4 b 
+        c d d d c c b 5 5 5 5 5 5 5 b . 
+        c b d d d d d 5 5 5 5 5 5 5 b . 
+        . c d d d d d d 5 5 5 5 5 d b . 
+        . . c b d d d d d 5 5 5 b b . . 
+        . . . c c c c c c c c b b . . . 
+        `, SpriteKind.Player)
+})
